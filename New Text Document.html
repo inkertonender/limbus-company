@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabs Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* Tab buttons */
+    .tabs {
+      display: flex;
+      cursor: pointer;
+    }
+
+    .tab {
+      padding: 10px 20px;
+      border: 1px solid #ccc;
+      border-bottom: none;
+      background: #eee;
+    }
+
+    .tab.active {
+      background: white;
+      font-weight: bold;
+    }
+
+    /* Tab content */
+    .content {
+      border: 1px solid #ccc;
+      padding: 20px;
+      display: none;
+    }
+
+    .content.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Simple Tabs</h2>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active" data-tab="1">Tab 1</div>
+    <div class="tab" data-tab="2">Tab 2</div>
+    <div class="tab" data-tab="3">Tab 3</div>
+    <div class="tab" data-tab="4">tab 4</div>
+  </div>
+
+  <!-- Content -->
+  <div id="content-1" class="content active">
+    This is content for Tab 1
+  </div>
+
+  <div id="content-2" class="content">
+    This is content for Tab 2
+  </div>
+
+  <div id="content-3" class="content">
+    This is content for Tab 3
+  </div>
+    <div id="content-4" class="content">
+    content for tab 4
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll(".tab");
+    const contents = document.querySelectorAll(".content");
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        
+        // Remove active from all
+        tabs.forEach(t => t.classList.remove("active"));
+        contents.forEach(c => c.classList.remove("active"));
+
+        // Add active to clicked tab
+        tab.classList.add("active");
+
+        // Show corresponding content
+        const tabNumber = tab.getAttribute("data-tab");
+        document.getElementById("content-" + tabNumber)
+                .classList.add("active");
+      });
+    });
+  </script>
+
+</body>
+</html>
