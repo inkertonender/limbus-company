@@ -1,0 +1,92 @@
+
+.container {
+    border: 1px solid #ccc;
+    padding-bottom: 20px;
+    text-align: center;
+    background-color:#4B3019;
+}
+.container--brown {
+    border: 1px solid #ccc;
+    padding-bottom: 20px;
+    text-align: center;
+    background-color:#30271f;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #eee;
+    background-color: #240e02;
+
+}
+
+.tabs {
+    display: flex;
+    cursor: pointer;
+}
+
+.tab {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    background: #FAD223;
+    color:#240e02;
+}
+
+.tab.active {
+    background: black;
+    color: #FAD223;
+    font-weight: bold;
+}
+
+/* Tab content */
+.content {
+    border: 1px solid #ccc;
+    padding: 20px;
+    display: none;
+}
+
+.content.active {
+    display: block;
+}
+
+img {
+    display: block;
+    margin: auto;
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.card {
+  text-align: center;
+  background-color: #4a2c1a;
+  align-items: center;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+/* IMAGE */
+.icon-grid {
+   /* spacing between boxes */
+   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+.card img {
+  border: 2px solid gold;
+  width: 120px;
+  height: auto;
+  margin: 0%;
+}
+
+/* TEXT */
+.card p {
+  margin-top: 8px;
+  font-size: 14px;
+}
